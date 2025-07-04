@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<div class="header">
+  <div class="logo">🎟️ Ticket Desk</div>
+  <div class="nav-buttons">
+    <button *ngIf="!isLoggedIn" class="blob-btn" routerLink="/login">
+      Login
+      <span class="blob-btn__inner">
+        <span class="blob-btn__blobs">
+          <span class="blob-btn__blob"></span>
+          <span class="blob-btn__blob"></span>
+          <span class="blob-btn__blob"></span>
+          <span class="blob-btn__blob"></span>
+        </span>
+      </span>
+    </button>
+
+    <button *ngIf="!isLoggedIn" class="blob-btn" routerLink="/register">
+      Register
+      <span class="blob-btn__inner">
+        <span class="blob-btn__blobs">
+          <span class="blob-btn__blob"></span>
+          <span class="blob-btn__blob"></span>
+          <span class="blob-btn__blob"></span>
+          <span class="blob-btn__blob"></span>
+        </span>
+      </span>
+    </button>
+
+    <button *ngIf="isLoggedIn" class="blob-btn" routerLink="/dashboard">
+      Dashboard
+      <span class="blob-btn__inner">
+        <span class="blob-btn__blobs">
+          <span class="blob-btn__blob"></span>
+          <span class="blob-btn__blob"></span>
+          <span class="blob-btn__blob"></span>
+          <span class="blob-btn__blob"></span>
+        </span>
+      </span>
+    </button>
+  </div>
+</div>
+
+<!-- Goo filter SVG (add this only once in your main page / app.component.html) -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+      <feColorMatrix in="blur" mode="matrix" values="
+        1 0 0 0 0  
+        0 1 0 0 0  
+        0 0 1 0 0  
+        0 0 0 21 -7" result="goo"></feColorMatrix>
+      <feBlend in="SourceGraphic" in2="goo" result="mix"></feBlend>
+    </filter>
+  </defs>
+</svg>
+
+
+<div class="hero-section">
+  <div class="content animate-fadein">
+    <h1>Welcome to <span class="brand">TicketDesk</span></h1>
+    <p>Your modern ticket management platform with real-time priority control and beautiful UI.</p>
+  </div>
+
+  <div class="model-viewer-container animated-object" id="modelBox">
+    <model-viewer
+      src="/assets/3d/ticket1.glb"
+      auto-rotate
+      camera-controls
+      shadow-intensity="1"
+      style="width:100%; height:400px;">
+    </model-viewer>
+  </div>
+  
+</div>
+  <div class="details-section animate-up">
+    <h1>What We Do </h1>
+    <h4 class="text-two">
+      Track, manage, and resolve tickets efficiently with real-time updates,
+      priority filters, and seamless backend integration.
+</h4>
+  </div>
+
+<!-- <div class="features-section animate-up">
+  <h2>✨ Features</h2>
+  <ul>
+    <li>Real-time ticket updates</li>
+    <li>Priority-based ticket management</li>
+    <li>Role-based access control</li>
+    <li>Responsive design for all devices</li>
+  </ul>
+</div> -->
+<br>
+
+<main class="container">
+  <p>One Web for All</p>
+  <section class="animation">
+    <div class="first"><div>Customers</div></div>
+    <div class="second"><div>Web Developers</div></div>
+    <div class="third"><div>Customer Support</div></div>
+  </section>
+</main>
+
+<h2 role="img" [attr.aria-label]="text">
+  <span *ngFor="let letter of text.split('')" [ngClass]="{'rev': randomClass()}">{{ letter }}</span>
+</h2>
+
+
+<div class="footer">
+  © 2025 TicketDesk | Designed with ❤️ By Hariom Nayma
+</div>
+
+</body>
+</html>

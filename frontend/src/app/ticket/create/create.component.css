@@ -1,0 +1,121 @@
+/* Animated background */
+.ticket-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/assets/images/bg04.jpg') no-repeat center center/cover;
+  background-blend-mode: overlay;
+}
+
+/* Glassy card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 35px 30px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  width: 350px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Title */
+.title {
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* Input groups with floating labels */
+.input-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-group input,
+.input-group select {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  width: 100%;
+  padding: 10px 5px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.input-group label {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  color: #ddd;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group select:focus + label,
+.input-group select:valid + label {
+  top: -14px;
+  font-size: 12px;
+  color: #fff;
+}
+
+/* Select dropdown options */
+.input-group select option {
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+}
+
+/* Custom arrow for select */
+.input-group::after {
+  content: '▼';
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  color: #fff;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+/* Glassy button */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 10px #fff;
+}
+
+/* Fade-in animation */
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadein {
+  animation: fadein 1.2s ease;
+}

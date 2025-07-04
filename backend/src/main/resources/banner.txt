@@ -1,0 +1,23 @@
+${AnsiColor.RED}
+
+    ▄▄▄▄▄▄      ▄▄▄▄▄▄
+  ▄█▓▓▓▓▓▓█▄ ▄█▓▓▓▓▓▓█▄   
+ ▐█▓▓▒▒▒▒▒▓▓█▓▓▒▒▒▒▒▓▓█▌    
+ █▓▓▒▒░╔╗╔╗────╔╗ ░▒▒▓▓█    ${AnsiColor.BLUE}
+ █▓▓▒▒░║╚╝╠═╗╔╦╬╣ ░▒▒▓▓█    ${AnsiColor.CYAN}
+ ▐█▓▓▒▒║╔╗║╬╚╣╔╣║░▒▒▓▓█▌    ${AnsiColor.MAGENTA}
+  ▀█▓▓▒╚╝╚╩══╩╝╚╝▒▒▓▓█▀ ${AnsiColor.YELLOW}
+    ▀█▓▓▒▒░░░░░▒▒▓▓█▀ ${AnsiColor.GREEN}
+      ▀█▓▓▒▒░▒▒▓▓█▀ ${AnsiColor.BLUE}
+        ▀█▓▓▒▓▓█▀ ${AnsiColor.CYAN}
+          ▀█▓█▀ ${AnsiColor.MAGENTA}
+            ▀${AnsiColor.YELLOW}
+ ❖ ᴊᴀᴠᴀ ᴠᴇʀsɪᴏɴ        🍵 ${java.version}
+ ❖${AnsiColor.GREEN} sᴘʀɪɴɢ-ʙᴏᴏᴛ ᴠᴇʀsɪᴏɴ 🍃${AnsiColor.YELLOW} ${spring-boot.version} 
+ ❖${AnsiColor.CYAN} ᴀᴘᴘʟɪᴄᴀᴛɪᴏɴ ᴠᴇʀsɪᴏɴ ❇️${AnsiColor.YELLOW} ${application.version}
+ ❖${AnsiColor.DEFAULT} ᴏᴘʀᴀᴛɪɴɢ sʏsᴛᴇᴍ     🔧${AnsiColor.YELLOW} ${os.name}
+${AnsiColor.MAGENTA}
+█░█ ▄▀█ █▀█ █ █▀█ █▀▄▀█
+█▀█ █▀█ █▀▄ █ █▄█ █░▀░█
+${AnsiColor.DEFAULT}
+

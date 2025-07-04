@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+          <pattern>
+    %yellow(%d{yyyy-MM-dd HH:mm:ss.SSS}) 
+   ╠ %green(➤) ◈ %highlight(%replace(%-5level){'INFO','📌 INFO'|'ERROR','❌ ERROR'|'WARN','⚠️  WARN '|'DEBUG','⚙️  DEBUG'|'TRACE','🔍 TRACE'})
+   ╠ %green(➤) ◈ %cyan([%thread])
+   ╠ %green(➤) ◈ %magenta(%-40.40logger{39})
+   ╚ %green(➤) ◈ - %msg%n
+</pattern>
+
+
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+    <logger name="org.springframework.web" level="DEBUG"/>
+    <logger name="com.yourapp" level="DEBUG"/>
+
+</configuration>

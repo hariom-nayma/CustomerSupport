@@ -1,0 +1,223 @@
+/* Background */
+.ticketlist-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/assets/images/bg04.jpg') no-repeat center center/cover;
+  background-blend-mode: overlay;
+  padding: 20px;
+  overflow: auto;
+}
+
+/* Glassy card */
+.glass-card {
+  background: rgba(126, 121, 121, 0.326);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  width: 95%;
+  max-width: 1000px;
+  color: #fff;
+}
+
+/* Title */
+.title {
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Table styles */
+.glass-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+.glass-table th,
+.glass-table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 14px 10px;
+  text-align: center;
+}
+
+.glass-table th {
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font-weight: 600;
+}
+
+.glass-table tr:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transition: 0.3s ease;
+}
+
+/* View link */
+.view-link {
+  color: #ffd369;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* No tickets message */
+.no-tickets {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Fade-in animation */
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadein {
+  animation: fadein 1.2s ease;
+}
+
+/* Glassy button */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 10px #fff;
+}
+
+/* 2nd part */
+.badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-high { background: #e53835; }
+.badge-medium { background: #fb8c00; }
+.badge-low { background: #43a047; }
+.badge-default { background: #607d8b; }
+
+.badge-open { background: #29b6f6; }
+.badge-closed { background: #757575; }
+.badge-pending { background: #fdd835; }
+
+.filter-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.filter-container input {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.priority-badge {
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+
+.priority-badge.customer {
+  background-color: #f1c40f;
+  color: #000;
+}
+
+.priority-badge.csr {
+  background-color: #5736eb90;
+}
+
+.priority-badge.admin {
+  background-color: #e74c3c;
+}
+
+
+/* Use existing .input-group style */
+/* This additional style ensures it behaves cleanly in other places like table headers */
+
+.filter-select-group {
+  display: inline-block;
+  width: 220px;
+  margin: 0 0 -10px 0;
+}
+
+/* Same glassy select style */
+.input-group select {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  width: 100%;
+  padding: -5px 5px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.input-group label {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  color: #ddd;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-group select:focus + label,
+.input-group select:valid + label {
+  top: -14px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.input-group::after {
+  content: '▼';
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  color: #fff;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+/* Dropdown options */
+.input-group select option {
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+}
+

@@ -1,0 +1,60 @@
+<div class="ticketlist-container">
+  <div class="glass-card animate-fadein">
+    <h2 class="title">Ticket List</h2>
+
+    <!-- Filters -->
+    <div class="filter-container">
+      <input [(ngModel)]="priorityFilter" placeholder="Filter by Priority" />
+      <div class="input-group filter-select-group">
+      <label for="priorityFilterSelect">Filter</label>
+      <select id="priorityFilterSelect" [(ngModel)]="priorityFilter">
+        <option value="">All</option>
+        <option value="LOW">Low</option>
+        <option value="MEDIUM">Medium</option>
+        <option value="HIGH">High</option>
+        <option value="URGENT">Urgent</option>
+      </select>
+    </div>
+      <input [(ngModel)]="idFilter" placeholder="Filter by ID" type="number" />
+      <input [(ngModel)]="dateFilter" placeholder="Filter by Date" type="date" />
+    </div>
+
+    <table class="glass-table">
+      <thead>
+        <tr>
+          <th *ngFor="let col of displayedColumns">{{ col | titlecase }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ticket of filteredTickets()">
+          <td>{{ ticket.id }}</td>
+          <td>{{ ticket.title }}</td>
+
+          <!-- Priority Badge -->
+          <td>
+            <span class="priority-badge" [ngClass]="ticket.priority.toLowerCase()">
+              {{ ticket.priority }}
+            </span>
+          </td>
+
+          <!-- Status Badge -->
+          <td>
+            <span class="badge" [ngClass]="getStatusClass(ticket.status)">
+              {{ ticket.status }}
+            </span>
+          </td>
+
+          <td>{{ ticket.createdAt | date: 'short' }}</td>
+
+          <td>
+            <a class="view-link" [routerLink]="['/ticket', ticket.id]">View</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button routerLink="/dashboard" class="btn-glass">Back</button>
+
+    <p *ngIf="tickets.length === 0" class="no-tickets">No tickets found.</p>
+  </div>
+</div>

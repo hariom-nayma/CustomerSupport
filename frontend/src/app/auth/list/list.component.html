@@ -1,0 +1,53 @@
+<div class="ticketlist-container">
+  <div class="glass-card animate-fadein">
+    <h2 class="title">User List</h2>
+
+
+    <!-- Filters -->
+    <div class="filter-container">
+      <input [(ngModel)]="typeFilter" placeholder="Filter by Role" />
+      <input [(ngModel)]="emailFilter" placeholder="Filter by Email" type="string" />
+      <input [(ngModel)]="nameFilter" placeholder="Filter by Name" type="string" />
+      <!-- <input [(ngModel)]="dateFilter" placeholder="Filter by Date" type="date" /> -->
+      
+      <div class="input-group filter-select-group">
+          <label for="priorityFilterSelect">Filter</label>
+          <select id="priorityFilterSelect" [(ngModel)]="typeFilter">
+              <option value="">All</option>
+              <option value="ADMIN">ADMIN</option>
+              <option value="CUSTOMER">CUSTOMER</option>
+              <option value="CSR">CSR</option>
+            </select>
+        </div>
+    </div>
+
+    <table class="glass-table">
+      <thead>
+        <tr>
+          <th *ngFor="let col of displayedColumns">{{ col | titlecase }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of filteredUsers()">
+          <!-- <td>{{ <i></i> }}</td> -->
+          <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+          <!-- Priority Badge -->
+          <td>
+            <span class="priority-badge" [ngClass]="user.role.toLowerCase()">
+              {{ user.role }}
+            </span>
+          </td>
+
+          <!-- <td>
+            <a class="view-link" [routerLink]="['/ticket', ticket.id]">View</a>
+          </td> -->
+        </tr>
+      </tbody>
+    </table>
+
+    <button routerLink="/dashboard" class="btn-glass">Back</button>
+
+    <p *ngIf="users.length === 0" class="no-tickets">No Users found.</p>
+  </div>
+</div>

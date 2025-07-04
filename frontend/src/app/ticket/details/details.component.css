@@ -1,0 +1,150 @@
+.details-container {
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/assets/images/bg04.jpg') no-repeat center center/cover;
+  background-blend-mode: overlay;
+  padding: 30px 15px;
+  overflow-y: auto;
+}
+
+/* Glassy card */
+.glass-card {
+  background: rgba(113, 109, 109, 0.233);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 35px 30px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  width: 95%;
+  max-width: 800px;
+  color: #fff;
+}
+
+/* Title */
+.title {
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Ticket details */
+.ticket-details p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Section title */
+.section-title {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Comment card */
+.comment-card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Input groups */
+.input-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-group textarea,
+.input-group select {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  width: 100%;
+  padding: 12px 5px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  resize: vertical;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.input-group label {
+  position: absolute;
+  left: 5px;
+  top: 12px;
+  color: #ddd;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-group textarea:focus + label,
+.input-group textarea:valid + label,
+.input-group select:focus + label,
+.input-group select:valid + label {
+  top: -14px;
+  font-size: 12px;
+  color: #fff;
+}
+
+/* Select options */
+.input-group select option {
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+}
+
+/* Custom dropdown arrow for select */
+.input-group::after {
+  content: '▼';
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  color: #fff;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+/* Glassy button */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 10px #fff;
+}
+
+/* Fade-in animation */
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadein {
+  animation: fadein 1.2s ease;
+}

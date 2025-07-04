@@ -1,0 +1,178 @@
+.dashboard-container {
+  height: 100vh;
+  display: flex;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('/assets/images/bg04.jpg') no-repeat center center/cover;
+  background-blend-mode: overlay;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Glassy card */
+.glassy-card {
+  background: rgba(172, 163, 163, 0.164);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 40px;
+  padding: 85px 150px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  width: 350px;
+
+  color: #171111;
+  font-family: Garamond, serif;
+}
+
+.glassy-card:hover{
+     background: rgba(190, 188, 188, 0.35);
+  box-shadow: 0 0 10px #fff;
+}
+
+/* Glassy button with hover effect */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 12px 120px;
+  color: #6a6767;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 10px #fff;
+}
+/* Sidebar styling */
+.sidebar {
+  width: 250px;
+  margin-right: 20px;
+  padding: 25px;
+  color: #fff;
+  height: calc(85vh - 40px);
+  overflow-y: auto;
+}
+
+.sidebar-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Menu list styling */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list li {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  transition: 0.3s ease;
+}
+
+.menu-list li:hover,
+.menu-list li.active {
+  background: rgba(255, 255, 255, 0.3);
+  color: #000;
+  font-weight: 600;
+}
+
+/* Content area styling */
+.content-area {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  color: #fff;
+}
+
+.content-area h2 {
+  margin-bottom: 20px;
+}
+
+/* Glass card shared style */
+.glass-card {
+  background: rgba(139, 139, 139, 0.306);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  margin-bottom: 70px;
+  color: #fff;
+  padding: 35px 30px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+}
+
+/* Fade-in animation */
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadein {
+  animation: fadein 0.9s ease;
+}
+
+
+/* 
+  these type the CSS variable as color
+  unlocking the ability for the browser 
+  to animate just that portion
+*/
+@property --＠color-1 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsl(98 100% 62%);
+}
+
+@property --＠color-2 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsl(204 100% 59%);
+}
+
+/* keyframes that change the color variable */
+@keyframes gradient-change {
+  to {
+    --＠color-1: hsl(210 100% 59%);
+    --＠color-2: hsl(310 100% 59%);
+  }
+}
+
+article {
+  /* apply variable changes over time */
+  animation: gradient-change 2s linear infinite alternate;
+  
+  background: linear-gradient(
+    /* 
+      in oklch produces more vibrant gradient results 
+      learn more https://developer.chrome.com/docs/css-ui/access-colors-spaces#color_interpolation
+    */
+    to right in oklch, 
+    /* use the variables in a gradient (or wherever!) */
+    var(--＠color-1), 
+    var(--＠color-2)
+  );
+  
+  /* old browser support */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* modern browser version */
+  background-clip: text;
+  color: transparent;
+}

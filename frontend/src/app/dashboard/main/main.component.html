@@ -1,0 +1,22 @@
+
+<div class="dash-container">
+    <div class="glass-card">
+
+        <div class="welcome-container">
+            <div class="upper">Welcome</div>
+            <div class="lower">Welcome</div>
+            <div class="inside">Hope You Have A Nice Day</div>
+        </div>
+      <article>  <h3>{{user.name}}</h3></article>
+<button class="btn-glass" routerLink="/ticketcreate">Create Ticket </button>
+<br>
+<button class="btn-glass" routerLink="/ticketlist"> View Tickets</button>
+<br>
+    <div *ngIf="isAdmin" >
+<button class="btn-glass" routerLink="/userlist"> User List</button>
+    </div>
+<br>
+
+<button class="logbtn-glass" (click)="logout()" >Logout</button>
+</div>
+</div>

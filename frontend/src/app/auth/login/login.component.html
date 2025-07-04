@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body >
+  <div *ngIf="!forgetPasswordMode" class="login-container">
+  <div class="glass-card animate-fadein">
+    <h2 class="title">Login</h2>
+    <form (ngSubmit)="login()">
+      <div class="input-group">
+        <input type="email" [(ngModel)]="credentials.email" name="email" required>
+        <label>Email</label>
+      </div>
+
+      <div class="input-group">
+        <input type="password" [(ngModel)]="credentials.password" name="password" required>
+        <label>Password</label>
+      </div>
+
+      <button type="submit" class="btn-glass"
+        [disabled]="!credentials.email || !credentials.password">Login</button>
+    </form>
+
+    <p class="login-link">Forgot your password? <a  href="javascript:void(0)" (click)="forgetPasswordMode = true">Reset here</a></p>
+    <p class="btn-glass"  routerLink="/home" >Back to Home</p>
+    <p class="login-link">Don't have an account? <a routerLink="/register">Register here</a></p>
+  </div>
+
+<div class="text-right animate-fadein">
+  <h1> Login </h1>
+  <p>Welcome to the login page. Please enter your credentials to access your account.</p>
+  <p>If you don't have an account, you can register by clicking the link below.</p>
+  <p>For any issues, please contact support.</p>
+</div>
+</div>
+
+<div class="login-container" *ngIf="forgetPasswordMode">
+  <div class="glass-card animate-fadein">
+<div *ngIf="forgetPasswordMode" >
+  <h3>Reset Password</h3>
+  <div class="input-group">
+  <input type="email" [(ngModel)]="emailForReset" name="emailverify" required >
+  <label>Email</label>
+</div>
+  <button class="btn-glass" (click)="sendOtp()">Send OTP</button>
+  <div *ngIf="showOtpCard" class="otp-inputs">
+    <input maxlength="1" [(ngModel)]="otp.d1" (keyup)="moveToNext($event, d2)" #d1>
+    <input maxlength="1" [(ngModel)]="otp.d2" (keyup)="moveToNext($event, d3)" #d2>
+    <input maxlength="1" [(ngModel)]="otp.d3" (keyup)="moveToNext($event, d4)" #d3>
+    <input maxlength="1" [(ngModel)]="otp.d4" (keyup)="moveToNext($event, d5)" #d4>
+    <input maxlength="1" [(ngModel)]="otp.d5" (keyup)="moveToNext($event, d6)" #d5>
+    <input maxlength="1" [(ngModel)]="otp.d6" #d6>
+    </div> 
+     <button *ngIf="showOtpCard" class="btn-glass"  (click)="verifyPasswordOtp()">Verify OTP</button>
+
+
+  <div *ngIf="showResetPassword">
+    <div class="input-group">
+    <input type="password" [(ngModel)]="newPassword" required="">
+    <label>New Password</label>
+  </div>
+    <div class="input-group">
+      <input type="password" [(ngModel)]="confirmPassword" required="">
+      <label>Confirm Password</label>
+    </div>
+    <button class="btn-glass" (click)="resetPassword()">Reset Password</button>
+  </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

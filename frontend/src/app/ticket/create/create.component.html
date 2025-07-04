@@ -1,0 +1,33 @@
+<div class="ticket-container">
+  <div class="glass-card animate-fadein">
+    <h2 class="title">Add Ticket</h2>
+
+    <form (ngSubmit)="onCreate()">
+      <div class="input-group">
+        <input type="text" [(ngModel)]="ticket.title" name="title" required>
+        <label>Title</label>
+      </div>
+
+      <div class="input-group">
+        <input type="text" [(ngModel)]="ticket.description" name="description" required>
+        <label>Description</label>
+      </div>
+
+      <div class="input-group">
+        <label for="prioritySelect" style="font-size: 2px;">Priority</label>
+        <select id="prioritySelect" [(ngModel)]="ticket.priority" name="priority" required>
+          <option value="" disabled selected>Select Priority</option>
+          <option value="LOW">Low</option>
+          <option value="MEDIUM">Medium</option>
+          <option value="HIGH">High</option>
+          <option value="URGENT">Urgent</option>
+        </select>
+        <label>Priority</label>
+      </div>
+
+      <button type="submit" class="btn-glass">Create</button>
+    </form>
+    <br>
+    <p routerLink="/dashboard" class="btn-glass">Back </p>
+  </div>
+</div>

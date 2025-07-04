@@ -1,0 +1,267 @@
+/* Animated gradient background */
+.dash-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/assets/images/bg04.jpg') no-repeat center center/cover;
+  background-blend-mode: overlay;
+}
+
+/* Glassy card */
+.glass-card {
+  background: rgba(92, 87, 87, 0.235);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 40px;
+  padding: 85px 150px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  width: 350px;
+  text-align: center;
+  color: #171111;
+  font-family: Garamond, serif;
+}
+
+/* Glassy button with hover effect */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 12px 120px;
+  color: #6a6767;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 10px #fff;
+}
+
+/* Logout Glassy button with hover effect */
+.logbtn-glass {
+  background: rgba(255, 255, 255, 0.2);
+  font-family: Brush Script MT, cursive;
+  border: none;
+  text-align: center;
+  padding: 12px 20px;
+  color: #845757;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.logbtn-glass:hover {
+  background: rgba(255, 13, 13, 0.35);
+  box-shadow: 0 0 10px #ff4d4d;
+}
+
+/* 
+  these type the CSS variable as color
+  unlocking the ability for the browser 
+  to animate just that portion
+*/
+@property --＠color-1 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsl(98 100% 62%);
+}
+
+@property --＠color-2 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsl(204 100% 59%);
+}
+
+/* keyframes that change the color variable */
+@keyframes gradient-change {
+  to {
+    --＠color-1: hsl(210 100% 59%);
+    --＠color-2: hsl(310 100% 59%);
+  }
+}
+
+article {
+  /* apply variable changes over time */
+  animation: gradient-change 2s linear infinite alternate;
+  
+  background: linear-gradient(
+    /* 
+      in oklch produces more vibrant gradient results 
+      learn more https://developer.chrome.com/docs/css-ui/access-colors-spaces#color_interpolation
+    */
+    to right in oklch, 
+    /* use the variables in a gradient (or wherever!) */
+    var(--＠color-1), 
+    var(--＠color-2)
+  );
+  
+  /* old browser support */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* modern browser version */
+  background-clip: text;
+  color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@layer demo.support {
+  h1 {
+    font-size: 10vmin;
+    line-height: 1.1;
+  }
+
+  body {
+    background: hsl(204 100% 5%);
+
+    min-block-size: 100%;
+    box-sizing: border-box;
+    display: grid;
+    place-content: center;
+
+    font-family: system-ui, sans-serif;
+    font-size: min(200%, 4vmin);
+
+    padding: 5vmin;
+  }
+
+  h1, p, body {
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  h1 {
+    line-height: 1.25cap;
+  }
+
+  p {
+    font-family: "Dank Mono", ui-monospace, monospace;
+  }
+
+  html {
+    block-size: 100%;
+  }
+
+  article {
+    display: grid;
+    gap: 1lh;
+    text-align: center;
+  }
+}
+
+.welcome-container {
+  width: 6.25em;
+  height: 1.15em;
+  font-size: 3rem;
+  font-family: sans-serif;
+  position: relative;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.welcome-container div {
+  position: absolute;
+  left: 0;
+  text-transform: uppercase;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.upper {
+  
+  top: 0;
+  height: 52.5%;
+  color: #fff;
+  overflow: hidden;
+  z-index: 3;
+  animation: moveUp 1.5s ease-in-out 1;
+  background-color: #494747de;
+  border-radius: 12px;
+}
+
+.lower {
+  
+  bottom: 0;
+  height: 100%;
+  background: linear-gradient(180deg, #121212 52.5%, #fff 52.5%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  z-index: 1;
+  background-color: #494747;
+  animation: moveDown 1.5s ease-in-out 1;
+}
+
+.inside {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-40%);
+  font-family: cursive;
+  text-align: center;
+  z-index: 2;
+  font-size: 0.9rem;
+  color: #dc143c;
+}
+
+@keyframes moveUp {
+  0%,
+  100% {
+    top: 0;
+  }
+
+  50%,
+  70% {
+    top: -45px;
+  }
+}
+
+@keyframes moveDown {
+  0%,
+  100% {
+    top: 0;
+  }
+
+  50%,
+  70% {
+    top: 30px;
+  }
+}
+
+@media (max-width: 424px) {
+  .welcome-container {
+    font-size: 2.5rem;
+  }
+
+  .inside {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .welcome-container {
+    font-size: 2rem;
+  }
+
+  .inside {
+    font-size: 0.2rem;
+  }
+}

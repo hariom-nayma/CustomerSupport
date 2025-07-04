@@ -1,0 +1,169 @@
+
+/* Animated gradient background */
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/assets/images/bg04.jpg') no-repeat center center/cover;
+  background-blend-mode: overlay;
+}
+
+/* Glassy card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 35px 30px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  width: 350px;
+  text-align: center;
+  color: #fff;
+  margin-left: 80px;
+
+}
+
+/* Title style */
+.title {
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* Input groups with floating labels */
+.input-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-group input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  width: 100%;
+  padding: 10px 5px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-group label {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  color: #ddd;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+  top: -14px;
+  font-size: 12px;
+  color: #fff;
+}
+
+/* Glassy button with hover effect */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 10px #fff;
+}
+
+/* Login link style */
+.login-link {
+  margin-top: 20px;
+}
+
+.login-link a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Fade-in animation */
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadein {
+  animation: fadein 1.2s ease;
+}
+
+.text-right {
+  text-align: right;
+  margin-right: 40px;
+  animation: fadein 1.2s ease;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #575252;
+   margin-left: auto;
+}
+
+.otp-card {
+  margin-top: 20px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+
+  input {
+    width: 38px;
+    height: 56px;
+    font-size: 24px;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+
+     &:focus {
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow:
+        0 0 6px rgba(255, 255, 255, 0.2),
+        0 0 12px rgba(144, 146, 147, 0.4),
+        0 0 20px rgba(165, 174, 177, 0.6);
+      border: 1px solid rgba(230, 233, 234, 0.7);
+    }
+  }
+}
+
+
+

@@ -1,0 +1,49 @@
+<div class="details-container">
+  <div class="glass-card animate-fadein">
+    <h2 class="title">Ticket Details</h2>
+
+    <div *ngIf="ticket" class="ticket-details">
+      <h3>{{ ticket.title }}</h3>
+      <p><strong>Description:</strong> {{ ticket.description }}</p>
+      <p><strong>Priority:</strong> {{ ticket.priority }}</p>
+      <p><strong>Status:</strong> {{ ticket.status }}</p>
+      <p *ngIf="ticket.assignedTo !== null"><strong>Assigned To:</strong> {{ ticket.assignedTo.name || 'N/A' }}</p>
+      <p><strong>Created:</strong> {{ ticket.createdAt | date:'short' }}</p>
+    </div>
+
+
+    <div *ngIf="role === 'ADMIN' || role === 'CSR'" class="action-buttons">
+       <button *ngIf="ticket.status === 'OPEN'"  (click)="updateTicketStatus('IN_PROGRESS',ticket.id)" class="btn-glass">Resolve</button>
+       <button *ngIf="ticket.status === 'IN_PROGRESS' && ticket.assignedTo.email === userEmail"  (click)="updateTicketStatus('RESOLVED',ticket.id)" class="btn-glass">Mark as Resolved</button>
+       <button *ngIf="ticket.status === 'IN_PROGRESS' || ticket.status === 'OPEN'"  (click)="updateTicketStatus('CLOSED',ticket.id)" class="btn-glass">Close</button>
+     </div>
+
+    <h3 class="section-title">Comments</h3>
+
+    <div *ngFor="let c of comments" class="comment-card">
+      <p><strong>{{ c.author }}</strong> ({{ c.createdAt | date:'short' }}) <i>[{{ role || 'Guest' }}]</i></p>
+      <p>{{ c.content }}</p>
+      <p><em>{{ c.internal ? 'Internal' : 'External' }}</em></p>
+    </div>
+
+    <form [formGroup]="commentForm" (ngSubmit)="addComment()" class="comment-form">
+      <div class="input-group">
+        <textarea id="content" formControlName="content" required></textarea>
+        <label for="content">Comment</label>
+      </div>
+
+      <div class="input-group">
+        <select id="type" formControlName="internal" required>
+          <option [value]="false">External</option>
+          <option [value]="true">Internal</option>
+        </select>
+        <label for="type">Type</label>
+      </div>
+
+      <button type="submit" class="btn-glass" [disabled]="commentForm.invalid">Add Comment</button>
+    </form>
+
+         <button routerLink="/ticketlist" class="btn-glass">Back</button>
+
+  </div>
+</div>

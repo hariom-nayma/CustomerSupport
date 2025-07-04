@@ -1,0 +1,53 @@
+<div class="dashboard-container">
+  <div class="sidebar glass-card animate-fadein">
+    <h3 class="sidebar-title">Dashboard</h3>
+    <ul class="menu-list">
+      <li (click)="activeSection = 'functions'" [class.active]="activeSection === 'functions'">Functions</li>
+      <li (click)="activeSection = 'updates'" [class.active]="activeSection === 'updates'">Updates</li>
+      <li (click)="activeSection = 'profile'" [class.active]="activeSection === 'profile'">Profile</li>
+      <li style="margin-top: 250px;" (click)="logout()">Logout</li>
+    </ul>
+  </div>
+
+  <div class="content-area glass-card animate-fadein">
+    <ng-container [ngSwitch]="activeSection">
+      <div *ngSwitchCase="'functions'">
+        <h2>Functions</h2>
+        <button class="btn-glass" routerLink="/ticketcreate">Create Ticket </button>
+<br>
+<button class="btn-glass" routerLink="/ticketlist"> View functions</button>
+<br>
+    <div *ngIf="isAdmin" >
+<button class="btn-glass" routerLink="/userlist"> User List</button>
+    </div>
+      </div>
+
+      <div *ngSwitchCase="'updates'">
+        <h2>Updates</h2>
+       <table>
+        <th>
+            commets            
+        </th>
+        <tr>
+            
+        </tr>
+       </table>
+      </div>
+
+      <div *ngSwitchCase="'profile'">
+        <h2>Profile</h2>
+        <div class="glassy-card">
+        <p> <strong>Name  :</strong> {{ user.name }}</p>
+        <p> <strong>Email :</strong> {{ user.email }}</p>
+        <p> <strong>Role  :</strong> {{ user.role }}</p>
+            <button class="btn-glass" (click)="logout()">Logout</button>
+        </div>
+      </div>
+
+      <div *ngSwitchDefault>
+     <h2>Welcome!</h2>  <article>  <h3>{{user.name}}</h3></article> 
+        <p>Select a menu option from the left.</p>
+      </div>
+    </ng-container>
+  </div>
+</div>

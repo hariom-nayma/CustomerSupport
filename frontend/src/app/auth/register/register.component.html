@@ -1,0 +1,67 @@
+<div class="register-container">
+  <div class="glass-card animate-fadein">
+    <h2 class="title">Create an Account</h2>
+
+    <form  *ngIf="!showOtpCard" (ngSubmit)="register()">
+      <div class="input-group">
+        <input type="text" [(ngModel)]="user.name" name="name" required>
+        <label>Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="email" [(ngModel)]="user.email" name="email" required>
+        <label>Email</label>
+      </div>
+
+      <div class="input-group">
+        <input type="password" [(ngModel)]="user.password" name="password" required>
+        <label>Password</label>
+      </div>
+
+      <div class="input-group">
+<div class="input-group">
+  <label for="role-select" style="font-size: 2px;">Role</label>
+  <select id="role-select" [(ngModel)]="user.role" name="role" required>
+    <option value="" disabled selected>Select Role</option>
+    <option value="CUSTOMER">CUSTOMER</option>
+    <option value="CSR">CSR</option>
+    <option value="ADMIN">ADMIN</option>
+  </select>
+</div>
+      </div>
+
+      <button type="submit" class="btn-glass">Register</button>
+    </form>
+
+    <p class="login-link">Already have an account? <a routerLink="/login">Login here</a></p>
+
+   <div *ngIf="showOtpCard" class="otp-card">
+  <h3>Verify Email OTP</h3>
+
+ <div class="otp-inputs">
+  <input maxlength="1" [(ngModel)]="otp.d1" name="d1" #d1 (keyup)="moveToNext($event, d2)">
+  <input maxlength="1" [(ngModel)]="otp.d2" name="d2" #d2 (keyup)="moveToNext($event, d3)">
+  <input maxlength="1" [(ngModel)]="otp.d3" name="d3" #d3 (keyup)="moveToNext($event, d4)">
+  <input maxlength="1" [(ngModel)]="otp.d4" name="d4" #d4 (keyup)="moveToNext($event, d5)">
+  <input maxlength="1" [(ngModel)]="otp.d5" name="d5" #d5 (keyup)="moveToNext($event, d6)">
+  <input maxlength="1" [(ngModel)]="otp.d6" name="d6" #d6 (keyup)="moveToNext($event, null)">
+</div>
+  <p class="otp-instructions">Enter the 6-digit OTP sent to your email.</p>
+  <!-- <p class="otp-resend" (click)="resendOtp()">Resend OTP -->
+
+  <button class="btn-glass" (click)="verifyOtp()">Verify</button>
+</div>
+
+
+
+  </div>
+
+
+
+  <div class="text-right animate-fadein">
+    <h1> Register </h1>
+    <p>Welcome to the registration page. Please fill in your details to create a new account.</p>
+    <p>If you already have an account, you can log in by clicking the link below.</p>
+    <p>For any issues, please contact support.</p>
+  </div>
+</div>
