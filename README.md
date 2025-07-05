@@ -39,15 +39,6 @@ _(Note: Add your project screenshots inside a `/screenshots` directory and updat
 ### Dashboard Profile
 ![Dashboard Profile](/screenshots/dashboard-profile.png)
 
-### Add Ticket Page
-![Add Ticket Page](/screenshots/add-ticket-page.png)
-
-### List Tickets
-![List Tickets](/screenshots/list-tickets.png)
-
-### List Users
-![List Users](/screenshots/list-users.png)
-
 ### Login Page
 ![Login Page](/screenshots/login-page.png)
 
@@ -56,6 +47,15 @@ _(Note: Add your project screenshots inside a `/screenshots` directory and updat
 
 ### OTP Verification
 ![OTP Verification](/screenshots/otp-verification.png)
+
+### Add Ticket Page
+![Add Ticket Page](/screenshots/add-ticket-page.png)
+
+### List Tickets
+![List Tickets](/screenshots/list-tickets.png)
+
+### List Users
+![List Users](/screenshots/list-users.png)
 
 ### Ticket and Comments 01
 ![Ticket and Comments 01](/screenshots/ticketandcomments01.png)
