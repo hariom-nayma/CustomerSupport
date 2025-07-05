@@ -32,7 +32,6 @@ CustomerSupport/
 
 ## ✨ Screenshots 📸
 
-_(Note: Add your project screenshots inside a `/screenshots` directory and update the paths below.)_
 ### Main Dashboard
 ![Main Dashboard](/screenshots/home.png)
 
