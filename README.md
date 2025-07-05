@@ -30,6 +30,39 @@ CustomerSupport/
 
 ---
 
+## ✨ Screenshots 📸
+
+_(Note: Add your project screenshots inside a `/screenshots` directory and update the paths below.)_
+### Main Dashboard
+![Main Dashboard](/screenshots/home.png)
+
+### Dashboard Profile
+![Dashboard Profile](/screenshots/dashboard-profile.png)
+
+### Add Ticket Page
+![Add Ticket Page](/screenshots/add-ticket-page.png)
+
+### List Tickets
+![List Tickets](/screenshots/list-tickets.png)
+
+### List Users
+![List Users](/screenshots/list-users.png)
+
+### Login Page
+![Login Page](/screenshots/login-page.png)
+
+### Register Page
+![Register Page](/screenshots/register-page.png)
+
+### OTP Verification
+![OTP Verification](/screenshots/otp-verification.png)
+
+### Ticket and Comments 01
+![Ticket and Comments 01](/screenshots/ticketandcomments01.png)
+
+### Ticket and Comments 02
+![Ticket and Comments 02](/screenshots/ticketandcomments02.png)
+
 ## 🚀 How to Run the Project 🔥
 
 ### 🔸 Backend (Spring Boot)
@@ -82,12 +115,6 @@ ng serve
 
 ---
 
-## ✨ Screenshots (Coming Soon) 📸
-
-*Add frontend UI and dashboard screenshots here.*
-
----
-
 ## 📃 License
 
 📝 This project is licensed under the [MIT License](LICENSE).
@@ -117,4 +144,3 @@ ng serve
 
 🌟 If you liked this project, don’t forget to **star** the repo and share it!
 PRs and suggestions are always welcome! 🤝✨
-
