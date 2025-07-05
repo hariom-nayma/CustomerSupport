@@ -25,7 +25,7 @@ CustomerSupport/
 | 🐳 Java 17 | ⚛️ Angular 17+ |
 | 🌱 Spring Boot 3.x | 📜 TypeScript |
 | 💾 Spring Data JPA | 🎨 HTML, CSS |
-| 📝 Lombok | 📦 Angular Material *(if used)* |
+| 📝 Lombok | 📦 Angular Material |
 | 🛢️ MySQL | 🔥 Live Angular CLI |
 
 ---
@@ -40,6 +40,8 @@ CustomerSupport/
 4️⃣ Access backend APIs at:  
    👉 `http://localhost:8080/`
 
+### NOTE : Make sure to change properties files in:
+    👉  "backend\src\main\resources\application.properties"
 ---
 
 ### 🔸 Frontend (Angular)
@@ -100,6 +102,15 @@ ng serve
     <img src="https://img.shields.io/badge/GitHub-hariom--nayma-181717?style=for-the-badge&logo=github" alt="GitHub">
   </a>
 </p>
+
+<p align="center">
+  <b>Hariom Nayma</b><br><br>
+  <a href="https://www.linkedin.com/in/hariomnayma/">
+    <img src="https://img.shields.io/badge/LinkedIn-hariom--nayma-0077B5?style=for-the-badge&logo=linkedin" alt="LinkedIn">
+  </a>
+</p>
+
+
 
 ---
 
