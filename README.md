@@ -36,9 +36,6 @@ _(Note: Add your project screenshots inside a `/screenshots` directory and updat
 ### Main Dashboard
 ![Main Dashboard](/screenshots/home.png)
 
-### Dashboard Profile
-![Dashboard Profile](/screenshots/dashboard-profile.png)
-
 ### Login Page
 ![Login Page](/screenshots/login-page.png)
 
@@ -47,6 +44,9 @@ _(Note: Add your project screenshots inside a `/screenshots` directory and updat
 
 ### OTP Verification
 ![OTP Verification](/screenshots/otp-verification.png)
+
+### Dashboard Profile
+![Dashboard Profile](/screenshots/dashboard-profile.png)
 
 ### Add Ticket Page
 ![Add Ticket Page](/screenshots/add-ticket-page.png)
