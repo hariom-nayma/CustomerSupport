@@ -103,8 +103,7 @@ ng serve
   </a>
 </p>
 
-<p align="center">
-  <b>Hariom Nayma</b><br><br>
+<p >
   <a href="https://www.linkedin.com/in/hariomnayma/">
     <img src="https://img.shields.io/badge/LinkedIn-hariom--nayma-0077B5?style=for-the-badge&logo=linkedin" alt="LinkedIn">
   </a>
