@@ -79,7 +79,7 @@ export class DetailsComponent implements OnInit {
 
   updateTicketStatus(status: string, id: number) {
     console.log('Updating ticket status:', status, 'for ticket ID:', id);
-    if (!this.role || (this.role !== 'ADMIN' && this.role !== 'AGENT')) {
+    if (!this.role || (this.role !== 'ADMIN' && this.role !== 'CSR')) {
       //this.snackBar.open('You do not have permission to update ticket status!', 'Close', { duration: 2000 });
       alert('You do not have permission to update ticket status!');
       return;
